@@ -9,11 +9,11 @@ export default function StoreToggle({ active, onToggle }) {
     onToggle(name);
   };
 
-  const bgColorProduct = active === "PRODUCT" ? "#007260" : "transparent";
-  const bgColorPromotion = active === "PROMOTION" ? "#007260" : "transparent";
+  const bgColorProduct = active === "PRODUCT" ? "#655DB0" : "transparent";
+  const bgColorPromotion = active === "PROMOTION" ? "#655DB0" : "transparent";
 
-  const borderProduct = active === "PROMOTION" ? "#cccccc" : "#007260";
-  const borderPromotion = active === "PRODUCT" ? "#cccccc" : "#007260";
+  const borderProduct = active === "PROMOTION" ? "#cccccc" : "#655DB0";
+  const borderPromotion = active === "PRODUCT" ? "#cccccc" : "#655DB0";
 
   const textProduct = active === "PROMOTION" ? "#424242" : "#FFFFFF";
   const textPromotion = active === "PRODUCT" ? "#424242" : "#FFFFFF";

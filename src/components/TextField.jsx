@@ -16,7 +16,7 @@ export default function TextField({
   return (
     <View style={{ ...styles.searchSection, width: width }}>
       <View style={styles.searchContainer}>
-        <FontAwesome5 name="search" size={18} color="#007260" />
+        <FontAwesome5 name="search" size={18} color="#655DB0" />
         <TextInput
           value={value}
           style={styles.input}
@@ -26,7 +26,7 @@ export default function TextField({
         />
         {!!value && (
           <TouchableOpacity onPress={() => callOnChange("")}>
-            <FontAwesome5 name="times" size={18} color="#007260" />
+            <FontAwesome5 name="times" size={18} color="#655DB0" />
           </TouchableOpacity>
         )}
       </View>

@@ -41,11 +41,11 @@ export default function Home({ navigation }) {
     <View style={styles.container}>
       <View style={styles.topBar}>
         <Text style={styles.heading}>Víveres Abuela Ruth</Text>
-        <View>
+        <View style={{ flexDirection: "row", alignItems: "center" }}>
           <TouchableOpacity
             onPress={() => navigation.push("Cart", { item: { cart } })}
           >
-            <FontAwesome5 name="shopping-basket" size={24} color="#007260"   />
+            <FontAwesome5 name="shopping-basket" size={24} color="#655DB0" />
           </TouchableOpacity>
           {totalCartCount ? (
             <View style={styles.badge}>
@@ -67,24 +67,10 @@ export default function Home({ navigation }) {
       ) : !products.length ? (
         <EmptyState />
       ) : (
-        <ScrollView style={{ marginTop: 24 }}>
-          <View
-            style={{
-              margin: -8,
-              flexWrap: "wrap",
-              paddingBottom: 172,
-              flexDirection: "row",
-            }}
-          >
+        <ScrollView style={{ flex: 1, marginTop: 24 }}>
+          <View style={styles.cardContainer}>
             {products.map((product) => (
-              <View
-                key={product.id}
-                style={{
-                  maxWidth: "50%",
-                  minWidth: "50%",
-                  alignSelf: "stretch",
-                }}
-              >
+              <View key={product.id} style={styles.cardWrapper}>
                 <ItemCard
                   data={product}
                   navigation={navigation}
@@ -101,6 +87,7 @@ export default function Home({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     padding: 16,
     backgroundColor: "#F2F2F2",
   },
@@ -109,10 +96,19 @@ const styles = StyleSheet.create({
     paddingLeft: 2,
     paddingRight: 2,
     paddingBottom: 24,
-    minWidth: "100%",
+    width: "100%", // Use percentage width for responsiveness
     alignItems: "center",
     flexDirection: "row",
     justifyContent: "space-between",
+  },
+  cardContainer: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+  },
+  cardWrapper: {
+    width: "48%", // Use percentage width for responsiveness
+    marginBottom: 16,
   },
   cartCount: {
     fontSize: 10,

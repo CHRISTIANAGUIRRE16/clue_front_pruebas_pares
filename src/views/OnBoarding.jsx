@@ -27,8 +27,8 @@ export default function OnBoarding({ navigation }) {
   const [metaIndex, setMetaIndex] = useState(0);
   const animatedValue = useRef(new Animated.Value(0)).current;
 
-  const viewBgRange = ["#007260", "#007260", "#007260", "#007260", "#007260"];
-  const buttonBgRange = ["#007260", "#007260", "#007260", "#007260", "#007260"];
+  const viewBgRange = ["#655DB0", "#655DB0", "#655DB0", "#F2F2F2", "#F2F2F2"];
+  const buttonBgRange = ["#F2F2F2", "#F2F2F2", "#F2F2F2", "#655DB0", "#655DB0"];
 
   const animateSlider = () =>
     Animated.timing(animatedValue, {
@@ -64,7 +64,7 @@ export default function OnBoarding({ navigation }) {
   });
   const buttonBg = animatedValue.interpolate({
     inputRange,
-    outputRange: isBgColorEven ? ["whitesmoke", "whitesmoke", "whitesmoke", "whitesmoke", "whitesmoke"] : ["whitesmoke", "whitesmoke", "whitesmoke", "whitesmoke", "whitesmoke"],
+    outputRange: isBgColorEven ? viewBgRange : buttonBgRange,
   });
 
   return (

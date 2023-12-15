@@ -107,7 +107,7 @@ function Cart({ navigation }) {
             </View>
             <TouchableOpacity
               style={{
-                backgroundColor: "#007260",
+                backgroundColor: "#655DB0",
                 borderRadius: 16,
                 padding: 16,
               }}

@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
     fontFamily: "Montserrat-Regular",
   },
   countIcon: {
-    backgroundColor: "#007260",
+    backgroundColor: "#655DB0",
     borderRadius: 4,
     paddingLeft: 6,
     paddingRight: 6,
