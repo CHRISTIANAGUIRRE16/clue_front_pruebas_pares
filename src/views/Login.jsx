@@ -9,6 +9,13 @@ import Button from '../components/Button';
 const Login = () => {
   const [isPasswordShown, setIsPasswordShown] = useState(false);
   const navigation = useNavigation();
+  // variables a utilizar para validar el usuario en el back
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const onSubmit = () => {
+    // Enviar los datos del formulario al backend
+  };
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
@@ -28,6 +35,9 @@ const Login = () => {
               placeholderTextColor={COLORS.black}
               keyboardType="email-address"
               style={{ flex: 1 }}
+              //cambies necesarios para guaardar el valor ingresado aqui por el usuario a una valriable
+              value={email}
+              onChangeText={setEmail}
             />
           </View>
         </View>
@@ -40,6 +50,9 @@ const Login = () => {
               placeholderTextColor={COLORS.black}
               secureTextEntry={!isPasswordShown}
               style={{ flex: 1 }}
+              // cambios para guardar la contrasenia para ser validada despues
+              value={password}
+              onChangeText={setPassword}
             />
 
             <TouchableOpacity onPress={() => setIsPasswordShown(!isPasswordShown)} style={styles.eyeIconContainer}>
@@ -55,7 +68,8 @@ const Login = () => {
         <Button
           title="Iniciar sesión"
           filled
-          onPress={() => navigation.navigate('Home')} // Reemplaza 'Onboarding' con el nombre correcto de tu pantalla de onboarding
+          // onPress={onSubmit}
+          onPress={() => {onSubmit, navigation.navigate('Home')}} // Reemplaza 'Onboarding' con el nombre correcto de tu pantalla de onboarding
           style={{ marginTop: 18, marginBottom: 4 }}
         />
 

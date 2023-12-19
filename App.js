@@ -29,6 +29,6 @@ export default function App() {
       <MainContainer></MainContainer>
     </Provider>
   ) : (
-    <Text>Cargando</Text>
+    <Text>Cargando...</Text>
   );
 }
